@@ -8,5 +8,15 @@ LABEL version="0.0.1"
 LABEL repository="https://github.com/kicaj29/github-action-docker-auto-release-milestone"
 LABEL maintainer="Jacek Kowalski"
 
+# first update local database with entries to make sure we have the newest entries
+# https://stedolan.github.io/jq/
+RUN apt-get update && apg-get install -y jq
+
+# -g means install the tool globally
+RUN dotnet tool install -g GitReleaseManager.Tool
+
+# append to the PATH variable path to GitReleaseManager.Tool
+ENV PATH /root/dotnet/tools:$PATH
+
 COPY entrypoint.sh /
 ENTRYPOINT [ "/entrypoint.sh" ]
