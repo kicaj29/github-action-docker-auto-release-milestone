@@ -16,7 +16,7 @@ RUN apt-get update && apt-get install -y jq
 RUN dotnet tool install -g GitReleaseManager.Tool
 
 # append to the PATH variable path to GitReleaseManager.Tool
-ENV PATH /root/dotnet/tools:$PATH
+ENV PATH /root/.dotnet/tools:$PATH
 
 COPY entrypoint.sh /
 ENTRYPOINT [ "/entrypoint.sh" ]
