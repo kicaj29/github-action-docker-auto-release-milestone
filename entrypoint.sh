@@ -24,7 +24,7 @@ milestone_name=$(jq --raw-output .milestone.title $GITHUB_EVENT_PATH)
 
 # <<<: here-string redirection operator
 # https://tldp.org/LDP/abs/html/x17837.html
-IFS = '/' read owner repository <<< "$GITHUB_REPOSITORY"
+IFS='/' read owner repository <<< "$GITHUB_REPOSITORY"
 
 release_url=$(dotnet gitreleasemanager create \
 --milestone $milestone_name \
