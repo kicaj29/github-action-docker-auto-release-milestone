@@ -1,4 +1,4 @@
-name: 'Auto Release Milestone'
+name: 'kicaj 29 Auto Release Milestone'
 description: 'Drafts a GitHub release based on a newly closed milestone'
 author: 'Jacek Kowalski'
 inputs:
