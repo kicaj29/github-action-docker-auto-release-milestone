@@ -1,0 +1,22 @@
+name: test
+on:
+  push:
+    branches:
+      - main
+  milestone:
+    types: [closed]
+jobs:
+  build:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get the sources
+        uses: actions/checkout@v2
+      - name: Create a release draft for a milestone
+        id: create-release-draft
+        uses: ./ # because the action is in the same repository we can reference to it by point local directory
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Print the URL of the release draft
+        if: steps.create-release-draft.outputs.release-url != ''
+        run: echo ${{ steps.create-release-draft.outputs.release-url }} 
