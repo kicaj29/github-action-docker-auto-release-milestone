@@ -42,6 +42,7 @@ if [  $? -ne 0 ]; then
     exit 1
 fi
 
+# From unkwnon reason the output paramter is not set but the draft release is published
 echo '::set-output name=release-url::$release_url'
 
 exit 0
