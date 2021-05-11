@@ -17,7 +17,6 @@ RUN dotnet tool install -g GitReleaseManager.Tool
 
 # append to the PATH variable path to GitReleaseManager.Tool
 ENV PATH /root/dotnet/tools:$PATH
-ENV DOTNET_CLI_TELEMETRY_OPTOUT 1
 
 COPY entrypoint.sh /
 ENTRYPOINT [ "/entrypoint.sh" ]
