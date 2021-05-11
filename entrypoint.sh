@@ -29,6 +29,7 @@ IFS='/' read owner repository <<< "$GITHUB_REPOSITORY"
 
 release_url=$(dotnet gitreleasemanager create \
 --milestone $milestone_name \
+--name $milestone_name \
 --targetcommitish $GITHUB_SHA \
 --token $repo_token \
 --owner $owner \
