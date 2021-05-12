@@ -16,7 +16,7 @@ Next commit and push the change.
 * create a milestone in github
 ![015-create-milestone.png](./images/015-create-milestone.png)
 
-* create issues in the milestone
+* create issues in the milestone (the must have set some tags like: bug, enhancement etc. it is required by the tool)
 ![016-create-issues-in-milestone.png](./images/016-create-issues-in-milestone.png)
 
 * close both issues
